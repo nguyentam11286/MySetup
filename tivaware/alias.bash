@@ -1,0 +1,3 @@
+
+export TIVA_WARE_PATH=$HOME/TivaWare
+export TIVA_FLASH_EXECUTABLE=lm4flash
