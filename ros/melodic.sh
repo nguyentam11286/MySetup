@@ -51,6 +51,12 @@ source ~/.bashrc
 # Check environment variable
 echo $ROS_PACKAGE_PATH
 
+# Create tutorials folder
+# Install tutorial packages
+cd ~/catkin_ws/src 
+mkdir tutorials
+sudo apt-get install ros-melodic-ros-tutorials
+
 # Create libraries folder
 cd ~/catkin_ws/src 
 mkdir libraries
@@ -58,12 +64,6 @@ mkdir libraries
 # Create projects folder
 cd ~/catkin_ws/src 
 mkdir projects
-
-# Create tutorials folder
-# Install tutorial packages
-cd ~/catkin_ws/src 
-mkdir tutorials
-sudo apt-get install ros-melodic-ros-tutorials
 
 ## ROS REFERENCE
 # Create reference packages
