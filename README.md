@@ -1,29 +1,61 @@
-# SYSTEM ALL SETUP 
-Note: Read setup.sh file first
->> source ~/MySetup/sys/setup.sh 
+# MySetup for Ubuntu 18.04
+
+## System All Setup
+Read sys/setup.sh file first
+```bash
+source ~/MySetup/sys/setup.sh 
+```
 <!-- Other command: chmod 777 /MySetup/mysetup.sh && ./MySetup/my_setup.sh -->
 
-# SYSTEM INSTALLATION
-Note: Read install.sh file 
->> source ~/MySetup/sys/install.sh 
+## System Installation
+Read sys/install.sh file 
+```bash
+source ~/MySetup/sys/install.sh 
+```
 
-# SYSTEM SETTINGS
-Note: Read setting.sh file 
->> source ~/MySetup/sys/setting.sh 
+## System Settings
+Read sys/setting.sh file 
+```bash
+source ~/MySetup/sys/setting.sh 
+```
 
-# SYSTEM ALIASES
-Note: Read alias.bash file 
->> echo "source ~/MySetup/sys/alias.bash" >> ~/.bashrc
+## System Aliases
+Read sys/alias.bash file 
+```bash
+echo "source ~/MySetup/sys/alias.bash" >> ~/.bashrc
+```
 
-# APPLICATION INSTALLATION (ALL)
-Note: Read all.sh file 
->> source ~/MySetup/app/all.sh 
+# Application Installation 
+Read app/all.sh file 
+```bash
+source ~/MySetup/app/all.sh 
+```
 
-## ROS MELODIC INSTALLATION
-Note: Read melodic.sh file 
-Note: Read test.md for ROS testing (E.g. rosserial)
->> source ~/MySetup/ros/melodic.sh
+## ROS Melodic Installation
+Read ros/melodic.sh file \
+Read test.md for ROS testing (E.g. rosserial)
+```bash
+source ~/MySetup/ros/melodic.sh
+```
 
-## TIVAWARE INSTALLATION
-Note: Read tivaware.sh file 
->> source ~/MySetup/tivaware/sw-tm4c.sh
+## TivaWare Installation
+Read tivaware/sw-tm4c.sh file 
+```bash
+source ~/MySetup/tivaware/sw-tm4c.sh
+```
+<!-- 
+## GITHUB
+cd ~/MySetup
+git init
+git add .
+git status
+git commit -m "MySetup for Ubuntu 18.04"
+git branch -M ubuntu-18.04
+git branch
+git remote add origin git@github.com:ngCuyentam11286/MySetup.git
+git push -u origin ubuntu18.04
+
+git commit -a -m "Update README.md"
+git push -u origin ubuntu18.04
+-->
+
