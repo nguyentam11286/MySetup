@@ -1,44 +1,64 @@
+#!/bin/bash
 ## ENERGIA IDE
-#  Download file.tar.xz in the official website & extract file
-sudo apt update 
-wget https://energia.nu/downloads/downloadv4.php?file=energia-1.8.10E23-linux64.tar.xz 
-tar -xf downloadv4*.tar.xz
-sudo chmod +x energia-*/energia
 
-# Run Energia
-#cd energia-* && ./energia
+# Detect system architecture
+ARCH=$(dpkg --print-architecture)
 
-# Move the folder to /usr/share like Arduino
-sudo mv energia-* /usr/share/energia
+# Function to install for amd64 
+install_amd64() 
+{
+  #  Download file.tar.xz in the official website & extract file
+  sudo apt update 
+  wget https://energia.nu/downloads/downloadv4.php?file=energia-1.8.10E23-linux64.tar.xz 
+  tar -xf downloadv4*.tar.xz
+  sudo chmod +x energia-*/energia
 
-# Create a symlink so you can run it from terminal
-sudo ln -s /usr/share/energia/energia /usr/local/bin/energia
+  # Run Energia
+  #cd energia-* && ./energia
 
-# Run Energia
-#energia
+  # Move the folder to /usr/share like Arduino
+  sudo mv energia-* /usr/share/energia
 
-# Create desktop launcher
-echo "[Desktop Entry]
-Name=Energia
-Exec=/usr/share/energia/energia
-Icon=/usr/share/energia/lib/arduino.png
-Type=Application
-Categories=Development;" >> ~/.local/share/applications/energia.desktop
-sudo chmod +x ~/.local/share/applications/energia.desktop
+  # Create a symlink so you can run it from terminal
+  sudo ln -s /usr/share/energia/energia /usr/local/bin/energia
 
-# Remove download file
-rm downloadv4*.tar.xz
+  # Run Energia
+  #energia
 
-# Energia on Linux may not have permission to access the USB debugging interface
-# Create a udev rule
-echo 'SUBSYSTEM=="usb", 
-ATTR{idVendor}=="1cbe", 
-ATTR{idProduct}=="00fd", 
-MODE="0666", 
-GROUP="plugdev"' | sudo tee /etc/udev/rules.d/99-tiva.rules > /dev/null
-sudo udevadm control --reload-rules
-sudo udevadm trigger
-sudo usermod -aG plugdev $USER
+  # Create desktop launcher
+  echo "[Desktop Entry]
+  Name=Energia
+  Exec=/usr/share/energia/energia
+  Icon=/usr/share/energia/lib/arduino.png
+  Type=Application
+  Categories=Development;" >> ~/.local/share/applications/energia.desktop
+  sudo chmod +x ~/.local/share/applications/energia.desktop
+
+  # Remove download file
+  rm downloadv4*.tar.xz
+
+  # Energia on Linux may not have permission to access the USB debugging interface
+  # Create a udev rule
+  echo 'SUBSYSTEM=="usb", 
+  ATTR{idVendor}=="1cbe", 
+  ATTR{idProduct}=="00fd", 
+  MODE="0666", 
+  GROUP="plugdev"' | sudo tee /etc/udev/rules.d/99-tiva.rules > /dev/null
+  sudo udevadm control --reload-rules
+  sudo udevadm trigger
+  sudo usermod -aG plugdev $USER
+}
+
+# Run the appropriate installer
+case "$ARCH" in
+  amd64)
+    install_amd64
+    ;;
+  *)
+    echo "Unsupported architecture: $ARCH"
+    exit 1
+    ;;
+esac
 
 # Reboot the system so the group change takes effect
 #sudo reboot

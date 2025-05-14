@@ -9,7 +9,7 @@ roscore
 rosrun rosserial_python serial_node.py /dev/ttyUSB0
 ```
 \
-Publish messages to /toggle_led topic to toggle state of LED.
+Publish messages to /toggle_led topic to toggle the state of the LED.
 ```bash
 rostopic pub /toggle_led std_msgs/Empty --once
 ```
@@ -25,7 +25,7 @@ sudo chmod 777 /dev/ttyACM0
 rosrun rosserial_python serial_node.py /dev/ttyACM0
 ```
 \
-Publish messages to /led topic to change color of LED.
+Publish messages to /led topic to change the color of the LED.
 ```bash
 rostopic pub /led std_msgs/ColorRGBA 1.0 0.0 0.0 0.25
 rostopic pub /led std_msgs/ColorRGBA 0.0 1.0 0.0 0.50

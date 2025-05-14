@@ -22,6 +22,7 @@ install_arm64() {
   sudo apt update
   sudo apt install -y ./vscode-linux-deb.arm64.deb
   code --version
+  rm vscode-linux-deb.arm64.deb
 }
 
 # Run the appropriate installer
