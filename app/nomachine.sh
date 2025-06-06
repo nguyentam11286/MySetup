@@ -30,8 +30,9 @@ install_amd64() {
 
 # Function to install for arm64
 install_arm64() {
+  # 
   # Download the latest .deb package using wget
-  wget https://download.nomachine.com/download/8.12/Linux/nomachine_8.12.3_1_arm64.deb -O nomachine_arm64.deb
+  wget https://download.nomachine.com/download/9.0/Arm/nomachine_9.0.188_11_arm64.deb -O nomachine_arm64.deb
 
   # Install the .deb package
   sudo dpkg -i nomachine_arm64.deb

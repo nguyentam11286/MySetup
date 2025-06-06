@@ -30,3 +30,7 @@ mkdir projects
 #cd catkin_rf
 #git clone -b rosmelodic https://github.com/aniskoubaa/ros_essentials_cpp.git
 #git clone https://github.com/qboticslab/mastering_ros.git
+
+## ENV.SH
+# env.sh is used to set the environment correctly on the remote side
+cp ~/MySetup/ros/env.sh ~/env.sh
