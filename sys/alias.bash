@@ -12,6 +12,7 @@ alias IP='echo $IP_ADDR'
 
 alias acm='ls -l /dev | grep ttyACM'
 alias usb='ls -l /dev | grep ttyUSB'
+alias i2c='i2cdetect -r -y 1'
 alias js='ls -l /dev/input/js*'
 
 alias ga='git add'
