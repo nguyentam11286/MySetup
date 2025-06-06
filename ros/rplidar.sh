@@ -1,4 +1,4 @@
-## RPLIDAR PACKAGES
+## RPLIDAR 
 cd ~/catkin_ws/src/libraries
 git clone https://github.com/Slamtec/rplidar_ros.git
 cd ~/catkin_ws

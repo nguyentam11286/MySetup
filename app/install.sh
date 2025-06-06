@@ -1,4 +1,5 @@
-# All Applications
+## APPLICATIONS
+
 source ~/MySetup/app/arduino.sh 
 #source ~/MySetup/app/energia.sh 
 source ~/MySetup/app/vscode.sh

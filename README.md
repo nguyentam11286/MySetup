@@ -26,10 +26,10 @@ source ~/MySetup/app/install.sh
 ```
 
 ## ROS Melodic Installation
-Read ros/melodic.sh file. \
+Read ros/install.sh file. \
 Read ros/README.md for ROS tutorials (E.g. rosserial).
 ```bash
-source ~/MySetup/ros/melodic.sh
+source ~/MySetup/ros/install.sh
 ```
 
 <!--
