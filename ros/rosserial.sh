@@ -6,10 +6,14 @@ sudo apt-get install ros-melodic-rosserial ros-melodic-rosserial-arduino
 #cd ~/catkin_ws 
 #catkin_make --only-pkg-with-deps rosserial_tivac
 
+# Prepare rosserial libraries for Arduino 
+cd ~/Arduino/libraries
+rm -rf ros_lib
+rosrun rosserial_arduino make_libraries.py .
+
 # Remove rosserial_arduino and rosserial_tivaC 
 #sudo apt-get remove ros-melodic-rosserial ros-melodic-rosserial-arduino
 #sudo apt-get autoremove
-
 
 # **********************************************************************
 

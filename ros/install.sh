@@ -33,7 +33,7 @@ mkdir projects
 
 ## ENVIRONMENT VARIABLES
 echo "export ROS_MASTER_URI=http://192.168.68.100:11311" >> ~/.bashrc
-echo "export ROS_HOSTNAME=192.168.1.100" >> ~/.bashrc
+echo "export ROS_HOSTNAME=192.168.68.100" >> ~/.bashrc
 source ~/.bashrc
 
 ## ENV.SH
