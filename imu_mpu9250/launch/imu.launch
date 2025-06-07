@@ -1,3 +1,14 @@
 <launch>
   <node name="imu_mpu9250" pkg="imu_mpu9250" type="imu_node.py" output="screen"/>
+
+  <!-- Launch Madgwick Filter -->
+  <!-- sudo apt-get install ros-melodic-imu-filter-madgwick -->
+  <node pkg="imu_filter_madgwick" type="imu_filter_madgwick_node" name="imu_filter" output="screen">
+    <param name="use_mag" value="false"/>
+    <param name="publish_tf" value="false"/>
+    <param name="world_frame" value="enu"/>
+    <remap from="imu/data_raw" to="/imu/data_raw"/>
+    <remap from="imu/data" to="/imu/data"/>
+  </node>
+
 </launch>
