@@ -4,6 +4,7 @@ alias cl='clear'
 alias hn='hostname -I'
 
 alias gb='gedit ~/.bashrc'
+alias cb='code ~/.bashrc'
 alias sb='source ~/.bashrc'
 
 IP_ADDR=$(ifconfig | grep 'inet ' | grep -v '127.0.0.1' | awk '{print $2}')
