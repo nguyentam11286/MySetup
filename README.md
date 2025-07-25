@@ -1,5 +1,9 @@
 # UBUNTU 22.04 SETUP
 
+Clone the repository
+```bash
+git clone https://github.com/nguyentam11286/MySetup.git -b ubuntu-22.04
+```
 System setup (read setup.sh file)
 ```bash
 source ~/MySetup/setup.sh
