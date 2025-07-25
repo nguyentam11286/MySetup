@@ -2,7 +2,7 @@
 # Apache License 2.0
 # Copyright (c) 2025
 
-################################################################################################
+#############################################################################################
 ## SYSTEM CHECKING
 
 echo ""
@@ -47,7 +47,7 @@ echo "PRESS [ENTER] TO CONTINUE"
 echo "IF YOU WANT TO CANCEL, PRESS [CTRL] + [C]"
 read
 
-################################################################################################
+#############################################################################################
 ## SYSTEM SETTING
 
 echo "[System Setting]"
@@ -89,12 +89,7 @@ xdg-mime default code.desktop text/x-c++src
 xdg-mime default code.desktop application/x-shellscript
 xdg-mime default code.desktop application/xml
 
-# To set every file (even unknown ones) to open in VS Code
-# ⚠️ Warning: this may override default apps for PDFs, images, etc.
-#xdg-mime default code.desktop inode/directory
-#xdg-mime default code.desktop application/octet-stream
-
-################################################################################################
+##############################################################################################
 ## SYSTEM INSTALLATION
 
 echo "[System Installation]"
@@ -107,7 +102,7 @@ sudo apt-get install gnome-shell-extensions -y  # Customize the GNOME desktop en
 sudo apt-get install terminator -y        
 sudo apt-get install python3-pip -y
 sudo apt-get install python3-transform3d -y
-sudo apt-get install htop -y                    # Systtem monitor (CPU usages, RAM, processes)
+sudo apt-get install htop -y                    # Systtem monitor (CPU, RAM, processes)
 
 # https://www.omgubuntu.co.uk/2021/11/best-command-line-tools-ubuntu-linux
 
@@ -118,7 +113,17 @@ sudo apt-get install ncdu -y		                # ncdu (Disk Analyser)
 
 sudo apt-get install i2c-tools -y
 
-################################################################################################
+#############################################################################################
+## WORKSPACE SETUP
+
+echo "[Workspace Setup]"
+
+sudo apt-get install wmctrl xdotool
+mkdir ~/.config/autostart
+cp ~/MySetup/workspace_setup.desktop ~/.config/autostart
+sudo chmod +x ~/MySetup/workspace_setup.sh
+
+#############################################################################################
 ## SYSTEM ALIASES
 
 echo "[System Aliases]"
@@ -146,17 +151,17 @@ sh -c "echo \"alias gph='git push -u origin ubuntu-22.04'\" >> ~/.bashrc"
 
 source ~/.bashrc
 
-################################################################################################
+#############################################################################################
 ## APPLICATION INSTALLATION
 
 #source ~/MySetup/app.sh
 
-################################################################################################
+#############################################################################################
 ## ROS2 HUMBLE INSTALLATION
 
 #source ~/MySetup/ros2.sh
 
-################################################################################################
+#############################################################################################
 
 echo "[Complete!!!]"
 exit 0
