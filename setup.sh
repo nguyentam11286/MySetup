@@ -106,10 +106,10 @@ sudo apt-get install htop -y                    # Systtem monitor (CPU, RAM, pro
 
 # https://www.omgubuntu.co.uk/2021/11/best-command-line-tools-ubuntu-linux
 
-sudo snap install btop -y		                    # btop++ (System Monitor)	
-sudo apt-get install googler -y	                # googler (Search the Web)
-sudo apt-get install neofetch -y 	              # neofetch (System Info)
-sudo apt-get install ncdu -y		                # ncdu (Disk Analyser)
+sudo snap install btop -y                       # btop++ (System Monitor)	
+sudo apt-get install googler -y                 # googler (Search the Web)
+sudo apt-get install neofetch -y                # neofetch (System Info)
+sudo apt-get install ncdu -y                    # ncdu (Disk Analyser)
 
 sudo apt-get install i2c-tools -y
 
@@ -118,7 +118,7 @@ sudo apt-get install i2c-tools -y
 
 echo "[Workspace Setup]"
 
-sudo apt-get install wmctrl xdotool
+sudo apt-get install wmctrl xdotool -y
 mkdir ~/.config/autostart
 cp ~/MySetup/workspace_setup.desktop ~/.config/autostart
 sudo chmod +x ~/MySetup/workspace_setup.sh
@@ -154,17 +154,17 @@ source ~/.bashrc
 #############################################################################################
 ## APPLICATION INSTALLATION
 
-#source ~/MySetup/app.sh
+source ~/MySetup/app.sh
 
 #############################################################################################
 ## ROS2 HUMBLE INSTALLATION
 
-#source ~/MySetup/ros2.sh
+source ~/MySetup/ros2.sh
 
 #############################################################################################
 
 echo "[Complete!!!]"
-exit 0
+#exit 0
 
 
 

@@ -5,7 +5,6 @@ sleep 5
 
 # Open Files & Terminal			
 nautilus &            		
-gnome-terminal &  
 terminator &
 
 # Wait for windows to open    		
@@ -13,7 +12,6 @@ sleep 2
 
 # Move Files & Terminal to workspace 1
 wmctrl -r "Files" -t 0		
-wmctrl -r "Terminal" -t 0	
 wmctrl -r "Terminator" -t 0
 
 # Get screen size
@@ -33,24 +31,18 @@ HALF_WIDTH=$((SCREEN_WIDTH / 2))
 # OPTION 1: wmctrl -r "Window Name" -e <gravity>,<X>,<Y>,<Width>,<Height>
 #wmctrl -r "Home" -e 0,0,0,785,534
 #wmctrl -r "parallels@ubuntu: ~" -e 0,0,495,790,550
-#wmctrl -r "0x03200007" -e 0,0,495,790,550
 
 # OPTION 2: xdotool search --name "Terminal Window Title" windowmove X Y windowsize WIDTH HEIGHT
-xdotool windowmove 52428807 100 200 windowsize 52428807 800 600
+#xdotool windowmove 52428807 100 200 windowsize 52428807 800 600
 FILE_ID=$(xdotool search --onlyvisible --class "nautilus" | head -n 1)
-GNOME_ID=$(xdotool search --onlyvisible --class "terminal" | head -n 1)
 TERMINATOR_ID=$(xdotool search --onlyvisible --class "terminator" | head -n 1)
 if [ -n "$FILE_ID" ]; then
     xdotool windowmove $FILE_ID 0 0
     xdotool windowsize $FILE_ID 785 534
 fi
-if [ -n "$GNOME_ID" ]; then
-    xdotool windowmove $GNOME_ID 0 490
-    xdotool windowsize $GNOME_ID 790 550
-fi
 if [ -n "$TERMINATOR_ID" ]; then
-    xdotool windowmove $TERMINATOR_ID 790 0
-    xdotool windowsize $TERMINATOR_ID 940 1080
+    xdotool windowmove $TERMINATOR_ID 0 515
+    xdotool windowsize $TERMINATOR_ID 735 445
 fi
 
 # Wait for a little bit    		
@@ -65,4 +57,4 @@ wmctrl -r "Visual Studio Code" -t 1
 sleep 2 
 
 # Fullscreen
-xdotool search --name "Visual Studio Code" windowactivate --sync key F11  
+xdotool search --name "Visual Studio Code" windowactivate --sync windowsize %@ 100% 100%
