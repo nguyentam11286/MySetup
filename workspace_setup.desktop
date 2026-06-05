@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/ndt/MySetup/workspace_setup.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name=Workspace Setup
+Comment=Automatically arrange windows on startup
+
